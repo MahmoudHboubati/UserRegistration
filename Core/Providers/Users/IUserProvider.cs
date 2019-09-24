@@ -10,5 +10,6 @@ namespace Core.Providers.Users
     public interface IUserProvider
     {
         IEnumerable<User> GetAll();
+        bool Add(User user);
     }
 }

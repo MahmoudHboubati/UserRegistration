@@ -10,5 +10,6 @@ namespace Core.Repositories.Users
     public interface IUserRepository
     {
         IEnumerable<User> GetAll();
+        bool Add(User user);
     }
 }

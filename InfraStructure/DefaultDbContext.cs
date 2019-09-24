@@ -11,7 +11,7 @@ namespace InfraStructure
 {
     public class DefaultDbContext : DbContext
     {
-        public DefaultDbContext() : base("DefaultConnection")
+        public DefaultDbContext() : base("name=DefaultConnection")
         {
         }
 

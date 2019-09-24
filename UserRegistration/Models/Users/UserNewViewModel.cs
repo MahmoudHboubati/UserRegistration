@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Core.Providers.Users;
 using System.ComponentModel.DataAnnotations;
+using Core.Entities;
 
 namespace UserRegistration.Models.Users
 {
@@ -30,9 +31,13 @@ namespace UserRegistration.Models.Users
             this.provider = provider;
         }
 
-        internal void Save(IUserProvider provider)
+        internal bool Save(IUserProvider provider)
         {
-            throw new NotImplementedException();
+            return provider.Add(new User
+            {
+                Email = Email,
+                UserName = UserName
+            });
         }
     }
 }

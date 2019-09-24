@@ -17,6 +17,12 @@ namespace Core.Providers.Users
             this.repository = repository;
         }
 
+        public bool Add(User user)
+        {
+            //Todo: change this to unit of work design
+            return repository.Add(user);
+        }
+
         public IEnumerable<User> GetAll()
         {
             return this.repository.GetAll();

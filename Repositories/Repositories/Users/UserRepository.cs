@@ -14,18 +14,25 @@ namespace Repositories.Repositories.Users
     {
         private readonly DefaultDbContext context = new DefaultDbContext();
 
+        public bool Add(User user)
+        {
+            context.Users.Add(user);
+            var count = context.SaveChanges();
+            return count > 0;
+        }
+
         public IEnumerable<User> GetAll()
         {
-            //return context.Users.ToList();
+            return context.Users.ToList();
 
-            return new List<User>()
-            {
-                new User { Id = 1, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
-                new User { Id = 2, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
-                new User { Id = 3, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
-                new User { Id = 4, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
-                new User { Id = 5, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
-            };
+            //return new List<User>()
+            //{
+            //    new User { Id = 1, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
+            //    new User { Id = 2, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
+            //    new User { Id = 3, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
+            //    new User { Id = 4, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
+            //    new User { Id = 5, UserName = "MahmoudHboubati", Email = "mhmoud.21830@gmail.com" },
+            //};
         }
     }
 }

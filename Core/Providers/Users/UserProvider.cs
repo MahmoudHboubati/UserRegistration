@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Providers.Users
 {
-    public class UserProvider
+    public class UserProvider : IUserProvider
     {
     }
 }

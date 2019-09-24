@@ -6,7 +6,9 @@
 
 <h2>@ViewBag.Title</h2>
 
-@Html.ActionLink(UserRegistration.Resources.User.Register, "Register")
+@Html.ActionLink(UserRegistration.Resources.User.Register, "Register", new { }, new { @class = "btn btn-primary" })
+
+<hr />
 
 @Html.Partial("IndexListPartial", Model)
 

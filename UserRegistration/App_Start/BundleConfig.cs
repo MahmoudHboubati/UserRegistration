@@ -27,6 +27,9 @@ namespace UserRegistration
                 "~/Content/bootstrap.css",
                 "~/Content/site.css"));
 
+            bundles.Add(new StyleBundle("~/content/css/bootstrap-rtl").Include(
+                "~/Content/bootstrap-rtl.css"));
+
             /* datatable bundles */
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
                 "~/Scripts/DataTables/jquery.dataTables.js"));

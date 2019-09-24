@@ -7,6 +7,12 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/content/datatables")
     @Scripts.Render("~/bundles/modernizr")
+    @{
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            @Styles.Render("~/content/css/bootstrap-rtl")
+        }
+    }
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

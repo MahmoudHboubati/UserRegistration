@@ -23,11 +23,12 @@ namespace UserRegistration.Controllers
             {
                 Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(Language);
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(Language);
-            }
 
-            HttpCookie cookie = new HttpCookie("Language");
-            cookie.Value = Language;
-            Response.Cookies.Add(cookie);
+                HttpCookie cookie = new HttpCookie("Language");
+                cookie.Value = Language;
+                Response.Cookies.Add(cookie);
+
+            }
 
             if (Request.UrlReferrer != null)
                 Response.Redirect(Request.UrlReferrer.AbsoluteUri);

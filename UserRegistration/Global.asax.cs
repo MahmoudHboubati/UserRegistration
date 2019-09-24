@@ -22,7 +22,7 @@ namespace UserRegistration
         {
             HttpCookie cookie = HttpContext.Current.Request.Cookies["Language"];
 
-            if(cookie != null && cookie.Value != null)
+            if(cookie != null && !string.IsNullOrEmpty(cookie.Value))
             {
                 System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cookie.Value);
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cookie.Value);

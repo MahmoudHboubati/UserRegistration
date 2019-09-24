@@ -13,12 +13,16 @@ namespace UserRegistration.Models.Users
         public UserIndexViewModel(IUserProvider provider)
         {
             this.provider = provider;
+
+            LoadList();
         }
 
         public void LoadList()
         {
 
         }
+
+        public IList<int> User { get; set; }
 
     }
 }

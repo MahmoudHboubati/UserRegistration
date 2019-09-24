@@ -29,10 +29,10 @@ namespace UserRegistration
 
             /* datatable bundles */
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
-                "~/Scripts/jquery.dataTables.js"));
+                "~/Scripts/DataTables/jquery.dataTables.js"));
 
             bundles.Add(new StyleBundle("~/content/datatables").Include(
-                "~/Content/jquery.dataTables.css"));
+                "~/Content/DataTables/css/jquery.dataTables.css"));
         }
     }
 }

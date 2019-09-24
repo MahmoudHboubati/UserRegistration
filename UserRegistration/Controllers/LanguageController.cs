@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace UserRegistration.Controllers
             return View();
         }
 
-        public ActionResult Change(string Language)
+        public void Change(string Language)
         {
             if (!string.IsNullOrEmpty(Language))
             {
@@ -28,7 +29,10 @@ namespace UserRegistration.Controllers
             cookie.Value = Language;
             Response.Cookies.Add(cookie);
 
-            return View("Index");
+            if (Request.UrlReferrer != null)
+                Response.Redirect(Request.UrlReferrer.AbsoluteUri);
+            else
+                Response.Redirect("/");
         }
     }
 }

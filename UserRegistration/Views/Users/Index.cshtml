@@ -13,4 +13,10 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datatables")
+    <script>
+        $(document).ready(function () {
+            var table = $('#userTable').DataTable();
+        });
+    </script>
 }

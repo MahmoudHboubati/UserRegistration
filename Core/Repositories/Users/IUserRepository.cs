@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Providers.Users
+namespace Core.Repositories.Users
 {
-    public interface IUserProvider
+    public interface IUserRepository
     {
         IEnumerable<User> GetAll();
     }

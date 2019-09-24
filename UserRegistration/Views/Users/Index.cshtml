@@ -4,7 +4,9 @@
     ViewBag.Title = "Users";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
+
+@Html.ActionLink("Register", "Register")
 
 @Html.Partial("IndexListPartial", Model)
 

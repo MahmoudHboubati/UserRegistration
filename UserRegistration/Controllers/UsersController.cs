@@ -17,7 +17,6 @@ namespace UserRegistration.Controllers
             this.provider = provider;
         }
 
-        // GET: Users
         public ActionResult Index()
         {
             UserIndexViewModel model = new UserIndexViewModel(provider);
@@ -29,6 +28,26 @@ namespace UserRegistration.Controllers
             UserIndexViewModel model = new UserIndexViewModel(provider);
             return PartialView(model);
         }
+
+        public ActionResult Register()
+        {
+            UserNewViewModel model = new UserNewViewModel(provider);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(UserNewViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                model.Save(provider);
+                return Redirect("Index");
+            }
+
+            return View(model);
+        }
+
 
         // GET: Users/Details/5
         public ActionResult Details(int id)

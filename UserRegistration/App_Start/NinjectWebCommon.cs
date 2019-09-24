@@ -1,4 +1,5 @@
 ﻿using Core.Providers.Users;
+using DependencyInversion;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
@@ -34,14 +35,9 @@ namespace UserRegistration.App_Start
             kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
             kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
-            kernel.Bind<IUserProvider>().To<UserProvider>();
+            DependencyMapping.RegisterServices(kernel);
 
-            RegisterServices(kernel);
             return kernel;
-        }
-        private static void RegisterServices(IKernel kernel)
-        {
-            //kernel.Bind<IRepo>().ToMethod(ctx => new Repo("Ninject Rocks!"));
         }
     }
 }

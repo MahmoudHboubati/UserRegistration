@@ -289,6 +289,10 @@
       <Project>{4B1E0EA4-C472-4C92-81D9-40435FA1B1B7}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DependencyInversion\DependencyInversion.csproj">
+      <Project>{66D0B6D0-0C9B-4B71-9F8A-A9AB6E5A6321}</Project>
+      <Name>DependencyInversion</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
